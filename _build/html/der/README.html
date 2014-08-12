@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DER &mdash; Linux工具快速教程</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Linux工具快速教程" href="../index.html" /> 
+
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+
+  </head>
+  <body>
+
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../index.html">Linux工具快速教程</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="der">
+<h1>DER<a class="headerlink" href="#der" title="Permalink to this headline">¶</a></h1>
+<p><tt class="docutils literal"><span class="pre">DER</span> <span class="pre">==</span> <span class="pre">reverse(&quot;RED&quot;)</span></tt></p>
+<p>本项目是 <a class="reference external" href="http://www.redisbook.com">《Redis 设计与实现》</a> 所使用的 Sphinx 样式。</p>
+<p>样式特点：</p>
+<ul class="simple">
+<li>单色调简单风格（默认为红色，但很容易就可以修改成其他颜色）</li>
+<li>醒目的 <tt class="docutils literal"><span class="pre">h1</span></tt> 标题</li>
+<li>清晰的、可以高效地对文本进行视线分割的 <tt class="docutils literal"><span class="pre">h2</span></tt> 标题</li>
+<li>固定大小、居中显示、百分比字体大小，布局健壮，适用于多种不同的屏幕环境</li>
+</ul>
+<div class="section" id="id1">
+<h2>使用方法<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>克隆本项目。</li>
+<li>修改 sphinx 项目 <tt class="docutils literal"><span class="pre">conf.py</span></tt> 文件中的 <tt class="docutils literal"><span class="pre">html_theme_path</span></tt> 变量，让它指向 <tt class="docutils literal"><span class="pre">der</span></tt> 文件夹所在的位置。</li>
+<li>修改 sphinx 项目 <tt class="docutils literal"><span class="pre">conf.py</span></tt> 文件中的 <tt class="docutils literal"><span class="pre">html_theme</span></tt> 变量的值为 <tt class="docutils literal"><span class="pre">der</span></tt> 。</li>
+<li>完成！</li>
+</ol>
+</div>
+<div class="section" id="disqus">
+<h2>开启 disqus 支持<a class="headerlink" href="#disqus" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">编辑 <tt class="docutils literal"><span class="pre">der</span></tt> 文件夹中的 <tt class="docutils literal"><span class="pre">layout.html</span></tt> 文件，修改文件中和 disqus 有关的语句：</p>
+<div class="highlight-python"><div class="highlight"><pre>{# note: remove this comment if you want to enable disqus support
+
+{% include &quot;disqus.html&quot; %}
+
+#}
+</pre></div>
+</div>
+<p>只保留这一句：</p>
+<div class="highlight-python"><div class="highlight"><pre>{% include &quot;disqus.html&quot; %}
+</pre></div>
+</div>
+</li>
+<li><p class="first">编辑 <tt class="docutils literal"><span class="pre">der</span></tt> 文件夹中的 <tt class="docutils literal"><span class="pre">disqus.html</span></tt> 文件，将其中的</p>
+<div class="highlight-python"><div class="highlight"><pre>var disqus_shortname = &#39;YOUR-DISQUS-FORUM-SHORTNAME&#39;;
+</pre></div>
+</div>
+<p>中的 <tt class="docutils literal"><span class="pre">YOUR-DISQUS-FORUM-SHORTNAME</span></tt> 替换成你的 disqus 论坛的名字。</p>
+</li>
+<li><p class="first">完成！</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>使用许可<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>本样式修改自 <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> 项目自带的 pyramid 样式，
+使用与源项目同样的 BSD 协议发布。</p>
+<div class="line-block">
+<div class="line">Copyright (c) 2013, huangz</div>
+<div class="line">All rights reserved.</div>
+</div>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ul class="simple">
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+</ul>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &#8220;AS IS&#8221; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</div>
+</div>
+
+
+
+            <div class="section" id="discuss">
+
+    <h2>
+        讨论
+        <a class="headerlink" href="#discuss" title="永久链接至标题">¶</a>
+    </h2>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'redis-command-cn'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<div id="ad">
+    <h2>广告</h2>
+    <p>计算关于生命、宇宙以及一切的终极的答案。</p>
+    <a href="http://vps.42qu.com" style="padding: 0px 0px 8px 20px;display: block;"><img src="../_static/42qu.png"/></a>
+    <a href="http://vps.42qu.com" style="font-weight: bold;padding-left: 20px;">42qu.com 主机空间</a>
+    <ul>
+        <li>中国 BGP 七线 / 美国五机房可选</li>
+        <li>独立 IP / root 权限</li>
+        <li><a href="http://www.vpsee.com/">vpsee</a> 专业技术支持</li>
+        <li>XEN 虚拟机，<span style="font-weight: bold;">卖给创业的你</span></li>
+    </ul>
+</div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../index.html">Linux工具快速教程</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, colin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

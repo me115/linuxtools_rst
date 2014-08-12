@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1.1. 学会使用命令帮助 &mdash; Linux工具快速教程</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Linux工具快速教程" href="../index.html" />
+    <link rel="up" title="1. Linux基础" href="index.html" />
+    <link rel="next" title="2. 一号标题" href="../helloworld.html" />
+    <link rel="prev" title="1. Linux基础" href="index.html" /> 
+
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+
+  </head>
+  <body>
+
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../helloworld.html" title="2. 一号标题"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="1. Linux基础"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Linux工具快速教程</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">1. Linux基础</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>1.1. 学会使用命令帮助<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>在linux终端，面对命令不知道怎么用，或不记得命令的拼写及参数时，我们需要求助于系统的帮助文档；
+linux系统内置的帮助文档很详细，通常能解决我们的问题，我们需要掌握如何正确的去使用它们；
+在只记得部分命令关键字的场合，我们可通过man -k来搜索；
+需要知道某个命令的简要说明，可以使用whatis；而更详细的介绍，则可用info命令；
+查看命令在哪个位置，我们需要使用which；
+而对于命令的具体参数及使用方法，我们需要用到强大的man；
+下面分别介绍；</p>
+</div>
+<div class="section" id="id3">
+<h2>命令使用<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>查看命令的简要说明<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>$whatis command</div></blockquote>
+<p>简要说明命令的作用；（显示命令所处的man分类页面）</p>
+<dl class="docutils">
+<dt>正则匹配</dt>
+<dd>whatis -w &#8220;loca*&#8221;</dd>
+<dt>更加详细的说明文档</dt>
+<dd>$info command</dd>
+</dl>
+</div>
+<div class="section" id="man">
+<h3>使用man<a class="headerlink" href="#man" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>查询命令command的说明文档</dt>
+<dd>$man command</dd>
+</dl>
+<p>eg：man date
+使用page up和page down来上下翻页</p>
+<p>在man的帮助手册中，将帮助文档分为了9个类别，对于有的关键字可能存在多个类别中，
+我们就需要指定特定的类别来查看；（一般我们查询bash命令，归类在1类中）；</p>
+<p>man页面所属的分类标识(常用的是分类1和分类3)</p>
+<div class="highlight-python"><div class="highlight"><pre>(1)、用户可以操作的命令或者是可执行文件
+(2)、系统核心可调用的函数与工具等
+(3)、一些常用的函数与数据库
+(4)、设备文件的说明
+(5)、设置文件或者某些文件的格式
+(6)、游戏
+(7)、惯例与协议等。例如Linux标准文件系统、网络协议、ASCⅡ，码等说明内容
+(8)、系统管理员可用的管理条令
+(9)、与内核有关的文件
+</pre></div>
+</div>
+<p>前面说到使用whatis会显示命令所在的具体的文档类别，我们学习如何使用它</p>
+<div class="highlight-python"><div class="highlight"><pre>eg:
+$whatis printf
+printf               (1)  - format and print data
+printf               (1p)  - write formatted output
+printf               (3)  - formatted output conversion
+printf               (3p)  - print formatted output
+printf [builtins]    (1)  - bash built-in commands, see bash(1)
+</pre></div>
+</div>
+<p>我们看到printf在分类1和分类3中都有；分类1中的页面是命令操作及可执行文件的帮助；而3是常用函数库说明；如果我们想看的是C语言中printf的用法，可以指定查看分类3的帮助：</p>
+<div class="highlight-python"><div class="highlight"><pre>$man 3 printf
+
+
+$man -k keyword
+</pre></div>
+</div>
+<p>查询关键字
+根据命令中部分关键字来查询命令，适用于只记住部分命令的场合；
+eg：
+查找GNOME的config配置工具命令：
+$man -k GNOME config| grep 1</p>
+<p>对于某个单词搜索，可直接使用/word来使用 :   /-a;
+多关注下SEE ALSO 可看到更多精彩内容</p>
+</div>
+<div class="section" id="id5">
+<h3>查看路径<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>$which command
+查看程序的binary文件所在路径</p>
+<p>eg:
+$which make：查找make程序安装路径；
+/opt/app/openav/soft/bin/make install</p>
+<p>$whereis command
+查看程序的搜索路径
+当系统中安装了同一软件的多个版本时，不确定使用的是哪个版本时，这个命令就能派上用场；</p>
+</div>
+<div class="section" id="id6">
+<h3>总结<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>whatis info man which whereis</p>
+<p>Posted by: 大CC | 18MAY,2014</p>
+<p>博客：[blog.me115.com](<a class="reference external" href="http://blog.me115.com">http://blog.me115.com</a>) [[订阅](<a class="reference external" href="http://feed.feedsky.com/me115">http://feed.feedsky.com/me115</a>)]</p>
+<p>微博：[新浪微博](<a class="reference external" href="http://weibo.com/bigcc115">http://weibo.com/bigcc115</a>)</p>
+</div>
+</div>
+</div>
+
+
+
+            <div class="section" id="discuss">
+
+    <h2>
+        讨论
+        <a class="headerlink" href="#discuss" title="永久链接至标题">¶</a>
+    </h2>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'redis-command-cn'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<div id="ad">
+    <h2>广告</h2>
+    <p>计算关于生命、宇宙以及一切的终极的答案。</p>
+    <a href="http://vps.42qu.com" style="padding: 0px 0px 8px 20px;display: block;"><img src="../_static/42qu.png"/></a>
+    <a href="http://vps.42qu.com" style="font-weight: bold;padding-left: 20px;">42qu.com 主机空间</a>
+    <ul>
+        <li>中国 BGP 七线 / 美国五机房可选</li>
+        <li>独立 IP / root 权限</li>
+        <li><a href="http://www.vpsee.com/">vpsee</a> 专业技术支持</li>
+        <li>XEN 虚拟机，<span style="font-weight: bold;">卖给创业的你</span></li>
+    </ul>
+</div>
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../helloworld.html" title="2. 一号标题"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="1. Linux基础"
+             >previous</a> |</li>
+        <li><a href="../index.html">Linux工具快速教程</a> &raquo;</li>
+          <li><a href="index.html" >1. Linux基础</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, colin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

@@ -1,9 +1,8 @@
-# rst build file
-_build/
-
 #################
 ## Eclipse
 #################
+
+_build/
 
 *.pydevproject
 .project

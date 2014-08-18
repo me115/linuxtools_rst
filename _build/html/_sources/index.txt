@@ -22,6 +22,7 @@ linuxtools quickly tutor
     linuxadvance/index
     toolref/index
     helloworld
+    tool/*
 
 
 Indices and tables

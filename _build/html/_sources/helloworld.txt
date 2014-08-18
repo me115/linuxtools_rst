@@ -5,7 +5,7 @@
 =========
 外部链接：`链接文本 <http://example.com/>`_
 
-内部链接示例 :ref:'_firstone'.
+需要引用自身，查看 :ref:`firstone` .  
 
 
 二号标题
@@ -15,7 +15,7 @@
 
 探索GitHub(三号标题）
 ********************
-熟悉Git\ [#]_\ 的人几乎都知道并喜欢GitHub\ [#]_\ ，反过来GitHub也吸引更多的\
+熟悉Git [#]_ 的人几乎都知道并喜欢GitHub\ [#]_\ ，反过来GitHub也吸引更多的\
 人来使用Git。GitHub正在成为开源项目托管的主要平台，是什么成就了GitHub？
 
 .. toctree::

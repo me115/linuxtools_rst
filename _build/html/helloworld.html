@@ -1,178 +1,652 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1   reStructuredText简明教程 &mdash; Linux工具快速教程</title>
+  
+
+  
+  
+
+  
+  <link href="_static/css/font_lato_googleapi.css" type='text/css'>
+  
+  
     
-    <title>1. 一号标题 &mdash; Linux工具快速教程</title>
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Linux工具快速教程" href="index.html"/>
+        <link rel="prev" title="26. 命令格式" href="tool/iostat.html"/> 
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
     
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Linux工具快速教程" href="index.html" />
-    <link rel="next" title="2. 命令格式" href="tool/[tool] crontab.html" />
-    <link rel="prev" title="linuxtools quickly tutor" href="index.html" /> 
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> linuxtools</a>
+        
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
 
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="base/index.html">Linux基础</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="base/01_use_man.html">1. 学会使用命令帮助</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/02_file_manage.html">2. 文件及目录管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/03_text_processing.html">3. Linux命令工具基础03 文本处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/05_process_manage.html">4. 进程管理工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/06_monitor.html">5. 性能监控</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/07_network.html">6. 网络工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/07_network.html#ftp-sftp-ssh">7. ftp sftp ssh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/08_user_manage.html">8. 用户管理工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base/09_system_manage.html">9. 系统管理、硬件管理及IPC资源管理</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advance/index.html">Linux工具进阶</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advance/01_program_build.html">1. 程序构建</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advance/02_program_debug.html">2. 程序调试</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advance/03_optimization.html">3. 性能优化</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tool/index.html">工具参考篇</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tool/gdb.html">1. 设置断点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/gdb.html#id2">2. 常用命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/gdb.html#gdb">3. 启动gdb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/lsof.html">4. lsof概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/ps.html">5. ps命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/scp.html">6. scp命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/top.html">7. 第一行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/top.html#id2">8. 第二行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/top.html#id3">9. 第三行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/top.html#id4">10. 第四行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/top.html#id5">11. 第五行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/top.html#id6">12. 进程信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/top.html#top">13. top命令交互操作指令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/top.html#id7">14. 实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/vmstat.html">15. vmstat的语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/vmstat.html#id1">16. 字段说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/wget.html">17. wget命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/sar.html">18. sar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/crontab.html">19. 命令格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/crontab.html#id2">20. 命令功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/crontab.html#id3">21. 命令参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/crontab.html#id4">22. 文件格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/crontab.html#id5">23. 常用方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/crontab.html#id10">24. 使用实例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/crontab.html#id26">25. 使用注意事项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/iostat.html">26. 命令格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/iostat.html#id2">27. 工具实例</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">1&nbsp;&nbsp;&nbsp;reStructuredText简明教程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.1&nbsp;&nbsp;&nbsp;段落</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">1.2&nbsp;&nbsp;&nbsp;二号标题：使用链接</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">1.3&nbsp;&nbsp;&nbsp;尾注</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id19">1.4&nbsp;&nbsp;&nbsp;引用：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id21">1.5&nbsp;&nbsp;&nbsp;添加图片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id24">1.6&nbsp;&nbsp;&nbsp;内联标记(单词标记)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id30">1.7&nbsp;&nbsp;&nbsp;列表：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-lists">1.8&nbsp;&nbsp;&nbsp;Definition Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bullet-lists">1.9&nbsp;&nbsp;&nbsp;Bullet Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id32">1.10&nbsp;&nbsp;&nbsp;特殊段落标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id37">1.11&nbsp;&nbsp;&nbsp;源代码标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id43">1.12&nbsp;&nbsp;&nbsp;替换文本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id44">1.13&nbsp;&nbsp;&nbsp;表格</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">linuxtools</a>
+      </nav>
 
 
-  </head>
-  <body>
-
-
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="tool/[tool] crontab.html" title="2. 命令格式"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="linuxtools quickly tutor"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Linux工具快速教程</a> &raquo;</li> 
-      </ul>
-    </div>  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>1&nbsp;&nbsp;&nbsp;reStructuredText简明教程</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/helloworld.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
             
-  <div class="section" id="firstone">
-<span id="id1"></span><h1>1. 一号标题<a class="headerlink" href="#firstone" title="Permalink to this headline">¶</a></h1>
-<p>外部链接：<a class="reference external" href="http://example.com/">链接文本</a></p>
-<p>需要引用自身，查看 <a class="reference internal" href="#firstone"><em>一号标题</em></a> .</p>
-<div class="section" id="id3">
-<h2>1.1. 二号标题<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="github">
-<h3>探索GitHub(三号标题）<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h3>
-<p>熟悉Git <a class="footnote-reference" href="#id9" id="id4">[1]</a> 的人几乎都知道并喜欢GitHub<a class="footnote-reference" href="#id10" id="id5">[2]</a>，反过来GitHub也吸引更多的人来使用Git。GitHub正在成为开源项目托管的主要平台，是什么成就了GitHub？</p>
-<div class="toctree-wrapper compound">
-<ul class="simple">
+  <div class="section" id="restructuredtext">
+<span id="helloworld"></span><h1><a class="toc-backref" href="#id54">1&nbsp;&nbsp;&nbsp;reStructuredText简明教程</a><a class="headerlink" href="#restructuredtext" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#restructuredtext" id="id54">1&nbsp;&nbsp;&nbsp;reStructuredText简明教程</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id2" id="id55">1.1&nbsp;&nbsp;&nbsp;段落</a><ul class="auto-toc">
+<li><a class="reference internal" href="#block-quotes" id="id56">1.1.1&nbsp;&nbsp;&nbsp;Block Quotes</a></li>
+<li><a class="reference internal" href="#id3" id="id57">1.1.2&nbsp;&nbsp;&nbsp;分割线</a></li>
+<li><a class="reference internal" href="#id4" id="id58">1.1.3&nbsp;&nbsp;&nbsp;侧边栏</a></li>
+<li><a class="reference internal" href="#id5" id="id59">1.1.4&nbsp;&nbsp;&nbsp;复合段落</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6" id="id60">1.2&nbsp;&nbsp;&nbsp;二号标题：使用链接</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id7" id="id61">1.2.1&nbsp;&nbsp;&nbsp;描点链接</a></li>
+<li><a class="reference internal" href="#id10" id="id62">1.2.2&nbsp;&nbsp;&nbsp;外部链接</a></li>
+<li><a class="reference internal" href="#id13" id="id63">1.2.3&nbsp;&nbsp;&nbsp;内部链接</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id14" id="id64">1.3&nbsp;&nbsp;&nbsp;尾注</a></li>
+<li><a class="reference internal" href="#id19" id="id65">1.4&nbsp;&nbsp;&nbsp;引用：</a></li>
+<li><a class="reference internal" href="#id21" id="id66">1.5&nbsp;&nbsp;&nbsp;添加图片</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id22" id="id67">1.5.1&nbsp;&nbsp;&nbsp;普通图片添加</a></li>
+<li><a class="reference internal" href="#id23" id="id68">1.5.2&nbsp;&nbsp;&nbsp;插图引用</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id24" id="id69">1.6&nbsp;&nbsp;&nbsp;内联标记(单词标记)</a></li>
+<li><a class="reference internal" href="#id30" id="id70">1.7&nbsp;&nbsp;&nbsp;列表：</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id31" id="id71">1.7.1&nbsp;&nbsp;&nbsp;名称解释列表：</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#definition-lists" id="id72">1.8&nbsp;&nbsp;&nbsp;Definition Lists</a></li>
+<li><a class="reference internal" href="#bullet-lists" id="id73">1.9&nbsp;&nbsp;&nbsp;Bullet Lists</a></li>
+<li><a class="reference internal" href="#id32" id="id74">1.10&nbsp;&nbsp;&nbsp;特殊段落标记</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id33" id="id75">1.10.1&nbsp;&nbsp;&nbsp;提示框</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id37" id="id76">1.11&nbsp;&nbsp;&nbsp;源代码标记</a></li>
+<li><a class="reference internal" href="#id43" id="id77">1.12&nbsp;&nbsp;&nbsp;替换文本</a></li>
+<li><a class="reference internal" href="#id44" id="id78">1.13&nbsp;&nbsp;&nbsp;表格</a></li>
+</ul>
+</li>
 </ul>
 </div>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">本书并非一本介绍Git的书，并且假设读者已经掌握了Git的相关操作。如果读者对Git尚不了解，可以参考我写的 《Git权威指南》<a class="footnote-reference" href="#id11" id="id6">[3]</a>一书。此外还可以从网上找到很多免费的、很好的Git资料，如：Git社区书<a class="footnote-reference" href="#id12" id="id7">[4]</a>、Pro Git<a class="footnote-reference" href="#id13" id="id8">[5]</a>等。</p>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id55">1.1&nbsp;&nbsp;&nbsp;段落</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>标记约定:</p>
+<p>一号 ====================
+二号 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;
+三号 ^^^^^^^^^^^^^^^^^^^^
+四号 &#8220;&#8221;&#8220;&#8221;&#8220;&#8221;&#8220;&#8221;&#8220;&#8221;&#8220;&#8221;&#8220;&#8221;&#8220;&#8221;&#8220;&#8221;&#8220;&#8221;&#8220;</p>
+<div class="line-block">
+<div class="line">段落块标记；This is a line block.  It ends with a blank line.</div>
+<div class="line-block">
+<div class="line">Each new line begins with a vertical bar (&#8220;|&#8221;).</div>
+<div class="line">Line breaks and initial indents are preserved.</div>
 </div>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td><a class="reference external" href="http://git-scm.com/">http://git-scm.com/</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[2]</a></td><td><a class="reference external" href="https://github.com/">https://github.com/</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id11" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[3]</a></td><td>ISBN：9787111349679, 由机械工业出版社华章公司于2011年7月出版。</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id12" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[4]</a></td><td><a class="reference external" href="http://book.git-scm.com/">http://book.git-scm.com/</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id13" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[5]</a></td><td><a class="reference external" href="http://progit.org/book/">http://progit.org/book/</a></td></tr>
-</tbody>
-</table>
+<div class="line">Continuation lines are wrapped portions of long lines;
+they begin with a space in place of the vertical bar.</div>
+<div class="line-block">
+<div class="line">The left edge of a continuation line need not be aligned with
+the left edge of the text above it.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">This is a second line block.</div>
+<div class="line"><br /></div>
+<div class="line">Blank lines are permitted internally, but they must begin with a &#8220;|&#8221;.</div>
+</div>
+<div class="section" id="block-quotes">
+<h3><a class="toc-backref" href="#id56">1.1.1&nbsp;&nbsp;&nbsp;Block Quotes</a><a class="headerlink" href="#block-quotes" title="Permalink to this headline">¶</a></h3>
+<p>Block quotes consist of indented body elements:</p>
+<blockquote>
+<div><p>My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
+as follows and begins now.  All brontosauruses are thin at one
+end, much much thicker in the middle and then thin again at the
+far end.  That is my theory, it is mine, and belongs to me and I
+own it, and what it is too.</p>
+<p class="attribution">&mdash;Anne Elk (Miss)</p>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id57">1.1.2&nbsp;&nbsp;&nbsp;分割线</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+<hr class="docutils" />
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id58">1.1.3&nbsp;&nbsp;&nbsp;侧边栏</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="first sidebar-title">Sidebar Title</p>
+<p class="sidebar-subtitle">Optional Subtitle</p>
+<p>This is a sidebar.  It is for text outside the flow of the main
+text.</p>
+<p class="rubric">This is a rubric inside a sidebar</p>
+<p class="last">Sidebars often appears beside the main text with a border and
+background color.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id59">1.1.4&nbsp;&nbsp;&nbsp;复合段落</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="compound">
+<p class="compound-first">This paragraph contains a literal block:</p>
+<div class="compound-middle highlight-python"><div class="highlight"><pre>Connecting... OK
+Transmitting data... OK
+Disconnecting... OK
+</pre></div>
+</div>
+<p class="compound-last">and thus consists of a simple paragraph, a literal block, and
+another simple paragraph.  Nonetheless it is semantically <em>one</em>
+paragraph.</p>
+</div>
+<p>This construct is called a <em>compound paragraph</em> and can be produced
+with the &#8220;compound&#8221; directive.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id60">1.2&nbsp;&nbsp;&nbsp;二号标题：使用链接</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id61">1.2.1&nbsp;&nbsp;&nbsp;描点链接</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>目的地：
+.. _my-reference-label: 这是个描点链接</p>
+<p>需引用自身, 查看 <em class="xref std std-ref">my-reference-label</em>.
+还是说这样可以：<a href="#id79"><span class="problematic" id="id80">`my-reference-label`_</span></a>
+eg：查看这个文件本身：<a href="#id8"><span class="problematic" id="id9">:ref:`_helloworld`_</span></a></p>
+</div>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id62">1.2.2&nbsp;&nbsp;&nbsp;外部链接</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.me115.com/">链接文本</a> 可以插入网页链接</p>
+<p><a class="reference external" href="http:///www.me115.com">使用链接</a> 和其它的方式 <a class="reference external" href="http://www.me115.com">colin的博客</a>.</p>
+<p>链接文本是网址，则不需要特别标记，分析器会发现网址和邮件；</p>
+</div>
+<div class="section" id="id13">
+<h3><a class="toc-backref" href="#id63">1.2.3&nbsp;&nbsp;&nbsp;内部链接</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>查看 top命令(<a href="#id81"><span class="problematic" id="id82">top_</span></a>),或者是查看sar命令(<a href="#id83"><span class="problematic" id="id84">sar_</span></a>),</p>
+<p>标记：</p>
+<p id="example">使用</p>
+<p>使用这个链接：<a class="reference internal" href="#example">example</a></p>
+<p>本页面链接：<a href="#id85"><span class="problematic" id="id86">helloword_</span></a></p>
 </div>
 </div>
 <div class="section" id="id14">
-<h2>1.2. 二级标题试试<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
-<p>** fef **</p>
-<p>ok</p>
+<h2><a class="toc-backref" href="#id64">1.3&nbsp;&nbsp;&nbsp;尾注</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>Lorem ipsum <a class="footnote-reference" href="#f1" id="id15">[1]</a> dolor sit amet ... <a class="footnote-reference" href="#f2" id="id16">[2]</a>
+.. rubric:: Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id15">1</a>, <a class="fn-backref" href="#id20">2</a>)</em> 第一条尾注的文本.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id16">[2]</a></td><td>第二条尾注的文本.</td></tr>
+</tbody>
+</table>
+<p>也可以使用自动标号的尾注：<a class="footnote-reference" href="#id38" id="id17">[3]</a>
+熟悉Git<a class="footnote-reference" href="#id39" id="id18">[4]</a>的人几乎都知道并喜欢
+.. [#] <a class="reference external" href="http://git-scm.com/">http://git-scm.com/</a></p>
+</div>
+<div class="section" id="id19">
+<h2><a class="toc-backref" href="#id65">1.4&nbsp;&nbsp;&nbsp;引用：</a><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<p>这里有个引用 <a class="footnote-reference" href="#f1" id="id20">[1]</a>  呵呵，
+.. [#f1] 参考文献</p>
+</div>
+<div class="section" id="id21">
+<h2><a class="toc-backref" href="#id66">1.5&nbsp;&nbsp;&nbsp;添加图片</a><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id22">
+<h3><a class="toc-backref" href="#id67">1.5.1&nbsp;&nbsp;&nbsp;普通图片添加</a><a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<p>图片路径为源文件的相对路径；或者以根目录为开始的</p>
+<a class="reference internal image-reference" href="_images/me115_com.jpg"><img alt="reStructuredText, the markup syntax" class="align-center" src="_images/me115_com.jpg" style="height: 200px;" /></a>
+<p>A figure directive with center alignment</p>
+<div class="figure align-center">
+<img alt="_images/me115_com.jpg" src="_images/me115_com.jpg" />
+</div>
+</div>
+<div class="section" id="id23">
+<h3><a class="toc-backref" href="#id68">1.5.2&nbsp;&nbsp;&nbsp;插图引用</a><a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="fig-0601">
+<img alt="_images/me115_com.jpg" src="_images/me115_com.jpg" />
+<p class="caption">插图 6-1 神奇的木书架</p>
+</div>
+<p>引用处：
+<a class="reference internal" href="#fig-0601"><em>插图 6-1 神奇的木书架</em></a></p>
+</div>
+</div>
+<div class="section" id="id24">
+<h2><a class="toc-backref" href="#id69">1.6&nbsp;&nbsp;&nbsp;内联标记(单词标记)</a><a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<p>斜体：<em>text</em>  （两侧各留一个空格）
+加粗：<strong>text</strong>
+代码样式：<tt class="docutils literal"><span class="pre">text</span></tt> （反引号）
+文本中如果有，使用反斜杠进行转义；</p>
+<p>Paragraphs contain text and may contain inline markup: <em>emphasis</em>,
+<strong>strong emphasis</strong>, <tt class="docutils literal"><span class="pre">inline</span> <span class="pre">literals</span></tt>, standalone hyperlinks
+(<a class="reference external" href="http://www.python.org">http://www.python.org</a>), external hyperlinks (<a href="#id87"><span class="problematic" id="id88">Python_</span></a>), internal
+cross-references (<a class="reference internal" href="#example">example</a>), external hyperlinks with embedded URIs
+(<a class="reference external" href="http://www.python.org">Python web site</a>), footnote references
+(manually numbered <a href="#id89"><span class="problematic" id="id90"><span id="id25"></span>[1]_</span></a>, anonymous auto-numbered <a class="footnote-reference" href="#id40" id="id26">[5]</a>, labeled
+auto-numbered <a class="footnote-reference" href="#id41" id="id27">[6]</a>, or symbolic <a href="#id52"><span class="problematic" id="id53"><span id="id28"></span>[*]_</span></a>), citation references
+(<a class="reference internal" href="sphinx_rtd_theme-master/demo_docs/source/demo.html#cit2002" id="id29">[CIT2002]</a>), substitution references (<a href="#id45"><span class="problematic" id="id46">|example|</span></a>), and <span class="target" id="inline-hyperlink-targets">inline
+hyperlink targets</span> (see <a href="#id91"><span class="problematic" id="id92">Targets_</span></a> below for a reference back to here).
+Character-level inline markup is also possible (although exceedingly
+ugly!) in <em>re</em><tt class="docutils literal"><span class="pre">Structured</span></tt><em>Text</em>.  Problems are indicated by
+<a href="#id47"><span class="problematic" id="id48">|problematic|</span></a> text (generated by processing errors; this one is
+intentional).</p>
+<p>The default role for interpreted text is <cite>Title Reference</cite>.  Here are
+some explicit interpreted text roles: a PEP reference (<span class="target" id="index-0"></span><a class="pep reference external" href="http://www.python.org/dev/peps/pep-0287"><strong>PEP 287</strong></a>); an
+RFC reference (<span class="target" id="index-1"></span><a class="rfc reference external" href="http://tools.ietf.org/html/rfc2822.html"><strong>RFC 2822</strong></a>); a <sub>subscript</sub>; a <sup>superscript</sup>;
+and explicit roles for <em>standard</em> <strong>inline</strong>
+<tt class="docutils literal"><span class="pre">markup</span></tt>.</p>
+</div>
+<div class="section" id="id30">
+<h2><a class="toc-backref" href="#id70">1.7&nbsp;&nbsp;&nbsp;列表：</a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<p>仅在段落的开头放置一个星号和一个缩进. 编号的列表也可以;也可以使用符号 # 自动加序号:</p>
+<ul class="simple">
+<li>这是一个项目列表</li>
+<li>有两项</li>
+</ul>
+<p>用-是markdown的做法,rst同样可用：</p>
+<ul class="simple">
+<li>hello，第一列</li>
+<li>第二列</li>
+<li>第三列</li>
+</ul>
+<ol class="arabic simple">
+<li>这是个有序列表</li>
+<li>还是个有序列表，自动编号</li>
+</ol>
+<p>注：列表可以嵌套，但是使用空行分割</p>
+<div class="section" id="id31">
+<h3><a class="toc-backref" href="#id71">1.7.1&nbsp;&nbsp;&nbsp;名称解释列表：</a><a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><em>大CC</em></dt>
+<dd>大CC的博客在这里</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="definition-lists">
+<h2><a class="toc-backref" href="#id72">1.8&nbsp;&nbsp;&nbsp;Definition Lists</a><a class="headerlink" href="#definition-lists" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Term</dt>
+<dd>Definition</dd>
+<dt>Term <span class="classifier-delimiter">:</span> <span class="classifier">classifier</span></dt>
+<dd><p class="first">Definition paragraph 1.</p>
+<p class="last">Definition paragraph 2.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="bullet-lists">
+<h2><a class="toc-backref" href="#id73">1.9&nbsp;&nbsp;&nbsp;Bullet Lists</a><a class="headerlink" href="#bullet-lists" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">A bullet list</p>
+<ul class="simple">
+<li>Nested bullet list.</li>
+<li>Nested item 2.</li>
+</ul>
+</li>
+<li><p class="first">Item 2.</p>
+<p>Paragraph 2 of item 2.</p>
+<ul class="simple">
+<li>Nested bullet list.</li>
+<li>Nested item 2.<ul>
+<li>Third level.</li>
+<li>Item 2.</li>
+</ul>
+</li>
+<li>Nested item 3.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id32">
+<h2><a class="toc-backref" href="#id74">1.10&nbsp;&nbsp;&nbsp;特殊段落标记</a><a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">这里是Note提示段落；</p>
+</div>
+<p>其它类似语法的还有：</p>
+<ul class="simple">
+<li>warning 一般显示的是信息安全方面的注意事项</li>
+<li>seealso 许多章节包含模块文档或者扩展文档的参考索引列表.这些列表由指令 seealso 创建</li>
+<li>centered 创建居中加粗文本行</li>
+<li>hlist 生成水平列表. 它将列表项横向显示并减少项目的间距使其较为紧凑</li>
+</ul>
+<p>水平列表,它将列表项横向显示并减少项目的间距使其较为紧凑</p>
+<div class="section" id="id33">
+<h3><a class="toc-backref" href="#id75">1.10.1&nbsp;&nbsp;&nbsp;提示框</a><a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Directives at large.</p>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">Don&#8217;t take any wooden nickels.</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">Mad scientist at work!</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Does not compute.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">It&#8217;s bigger than a bread box.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<ul class="last simple">
+<li>Wash behind your ears.</li>
+<li>Clean up your room.</li>
+<li>Call your mother.</li>
+<li>Back up your data.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a note.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">15% if the service is good.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Strong prose may provoke extreme mental exertion.
+Reader discretion is strongly advised.</p>
+</div>
+<div class="admonition-and-by-the-way admonition">
+<p class="first admonition-title">And, by the way...</p>
+<p class="last">You can make up your own admonition too.</p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">本书并非一本介绍Git的书，并且假设读者已经掌握了Git的相关操作。如果读者对Git尚不了解，可以参考我写的 《Git权威指南》<a class="footnote-reference" href="#id42" id="id34">[7]</a>一书。此外还可以从网上找到很多免费的、很好的Git资料，如：Git社区书<a href="#id49"><span class="problematic" id="id50"><span id="id35"></span>[#]_</span></a>、Pro Git<a href="#id49"><span class="problematic" id="id51"><span id="id36"></span>[#]_</span></a>等。</p>
+</div>
+<p>可以通过多行缩进产生多行评论：</p>
+</div>
+</div>
+<div class="section" id="id37">
+<h2><a class="toc-backref" href="#id76">1.11&nbsp;&nbsp;&nbsp;源代码标记</a><a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h2>
+<p>这个 :: 标记很优雅:（下一行需要跟一个空白行）
+- 如果作为独立段落存在,则整段都不会出现在文档里.
+- 如果前面有空白，则标记被移除.
+- 如果前面是非空白，则标记被一个冒号取代.</p>
+<div class="highlight-python"><div class="highlight"><pre>for(int i = 0;i&lt; 10 ;i++)
+{
+    cout &lt;&lt; &quot;hello world&quot; &lt;&lt; endl;
+}
+</pre></div>
+</div>
+<p>高亮语法的标记：</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">&quot;Love Python, Love FreeDome&quot;</span>
+<span class="hll">    <span class="k">print</span> <span class="s">&quot;E文标点,.0123456789,中文标点,. &quot;</span>
+</span></pre></div>
+</td></tr></table></div>
+<div class="highlight-sh"><div class="highlight"><pre>/opt/app/todeav1<span class="nv">$ps</span> -fe| grep ls
+root      3676     1  0  2012 ?        02:58:14 /usr/sbin/vmtoolsd
+</pre></div>
+</div>
+<table class="docutils footnote" frame="void" id="id38" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id17">[3]</a></td><td><a class="reference external" href="http://git-scm.com/">http://git-scm.com/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id39" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id18">[4]</a></td><td><a class="reference external" href="https://github.com/">https://github.com/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id40" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id26">[5]</a></td><td>ISBN：9787111349679, 由机械工业出版社华章公司于2011年7月出版。</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id41" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id27">[6]</a></td><td><a class="reference external" href="http://book.git-scm.com/">http://book.git-scm.com/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id42" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id34">[7]</a></td><td><a class="reference external" href="http://progit.org/book/">http://progit.org/book/</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id43">
+<h2><a class="toc-backref" href="#id77">1.12&nbsp;&nbsp;&nbsp;替换文本</a><a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h2>
+<p>I recommend you try <a href="#id93"><span class="problematic" id="id94">|Python|_</span></a>.</p>
+<div class="topic">
+<p class="topic-title first">Topic Title</p>
+<p>This is a topic.</p>
+</div>
+<p class="rubric">This is a rubric</p>
+</div>
+<div class="section" id="id44">
+<h2><a class="toc-backref" href="#id78">1.13&nbsp;&nbsp;&nbsp;表格</a><a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">David Goodger</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Address:</th><td class="field-body">123 Example Street
+Example, EX  Canada
+A1B 2C3</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Contact:</th><td class="field-body"><a class="reference external" href="mailto:docutils-develop&#37;&#52;&#48;lists&#46;sourceforge&#46;net">docutils-develop<span>&#64;</span>lists<span>&#46;</span>sourceforge<span>&#46;</span>net</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Authors:</th><td class="field-body">Me; Myself; I</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Dedication:</th><td class="field-body">For Docutils users &amp; co-developers.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">abstract:</th><td class="field-body">This document is a demonstration of the reStructuredText markup
+language, containing examples of all basic reStructuredText
+constructs and many advanced constructs.</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
-
-
-            <div class="section" id="discuss">
-
-    <h2>
-        讨论
-        <a class="headerlink" href="#discuss" title="永久链接至标题">¶</a>
-    </h2>
-
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'colin'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-
-<div id="ad">
-    <h2>木书架</h2>
-    <p></p>
-    <a href="http://www.me115.com" style="padding: 0px 0px 8px 20px;display: block;"><img src="_static/me115_com.jpg"/></a>
-    <a href="http://www.me115.com" style="font-weight: bold;padding-left: 20px;">木书架</a>
-    <ul>
-        <li>专注于互联网阅读分享</li>
-        <li>关注互联网创业</li>
-        <li>关注个人提升</li>
-    </ul>
-</div>
 
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="tool/iostat.html" class="btn btn-neutral" title="26. 命令格式"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, colin.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="tool/[tool] crontab.html" title="2. 命令格式"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="linuxtools quickly tutor"
-             >previous</a> |</li>
-        <li><a href="index.html">Linux工具快速教程</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2014, colin.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

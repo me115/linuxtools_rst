@@ -14,15 +14,13 @@ linuxtools quickly tutor
 ----
 
 .. toctree::
-    :maxdepth: 3
-    :numbered: 2
+    :maxdepth: 2
     :glob:
     
-    linuxbase/index
-    linuxadvance/index
-    toolref/index
+    base/index
+    advance/index
+    tool/index
     helloworld
-    tool/*
 
 
 Indices and tables

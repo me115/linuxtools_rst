@@ -1,16 +1,25 @@
 .. _linuxbase-overview:
 
 Linux基础
-====================
-熟悉Git\ [#]_\ 的人几乎都知道并喜欢GitHub\ [#]_\ ，反过来GitHub也吸引更多的\
-人来使用Git。GitHub正在成为开源项目托管的主要平台，是什么成就了GitHub？
+==========
+这一部分主要介绍Linux常用命令工具，比如文件管理、文本处理；\
+为了让读者用最少的时间掌握到常用的知识，对于每个工具的举例，尽量做到小而精;
+
 
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 1
+    :numbered: 2
 
-   010-use-man
-   020-file-manage
-   030-text-processing
+    01_use_man
+    02_file_manage
+    03_text_processing
+    04_disk
+    05_process_manage
+    06_monitor
+    07_network
+    08_user_manage
+    09_system_manage
+
 
 .. seealso::
 

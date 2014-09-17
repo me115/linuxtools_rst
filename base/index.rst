@@ -7,7 +7,7 @@ Linux基础
 
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered: 2
 
     01_use_man

@@ -103,12 +103,3 @@ $whereis command
 
 whatis info man which whereis
 
-
-
-
-Posted by: 大CC | 18MAY,2014
-
-博客：[blog.me115.com](http://blog.me115.com) [[订阅](http://feed.feedsky.com/me115)]
-
-微博：[新浪微博](http://weibo.com/bigcc115)
-

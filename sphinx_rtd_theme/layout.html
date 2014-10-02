@@ -109,12 +109,14 @@
 
 
       {# PAGE CONTENT #}
+      
       <div class="wy-nav-content">
         <div class="rst-content">
           {% include "breadcrumbs.html" %}
           <div role="main" class="document">
             {% block body %}{% endblock %}
           </div>
+          
           {% include "footer.html" %}
         </div>
       </div>
@@ -122,6 +124,7 @@
     </section>
 
   </div>
+  
   {% include "versions.html" %}
 
   {% if not embedded %}

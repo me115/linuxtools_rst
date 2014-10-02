@@ -1,8 +1,11 @@
 .. _06_monitor:
 
-
 性能监控
 =========
+
+.. contents:: 目录
+
+
 在使用操作系统的过程中，我们经常需要查看当前的性能如何，需要了解CPU、内存和硬盘的使用情况；
 本节介绍的这几个工具能满足日常工作要求；
 
@@ -125,9 +128,4 @@ top / sar / free / watch
 
 附录
 ----------
-关于sar的使用详解参考之前的文章：
-[sar 找出系统瓶颈的利器](http://blog.me115.com/2013/12/468)
-
-Posted by: 大CC | 12JUL,2014
-博客：[blog.me115.com](http://blog.me115.com) [[订阅](http://feed.feedsky.com/me115)]
-微博：[新浪微博](http://weibo.com/bigcc115)
+关于sar的使用详解参考：:ref:`sar`

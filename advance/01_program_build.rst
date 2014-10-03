@@ -3,46 +3,113 @@
 程序构建
 ===========
 
-make
-必须满足第一条规则，满足后停止
-除第一条规则，其他无顺序
-变量
-所有全局
-自变量
-$@目标文件名
-@^所有前提名，除副本
-@＋所有前提名，含副本
-@＜一个前提名
-@？所有新于目标文件的前提名
-@*目标文件的基名称
-？
-为什么有的是@，有的没有？
-make -f ompdb.mf  :通过使用-f选项来确定
+.. contents:: 目录
+
+一般源代码提供的程序安装需要通过配置、编译、安装三个步骤；
+
+1. 配置做的工作主要是检查当前环境是否满足要安装软件的依赖关系，以及设置程序安装所需要的初始化信息，比如安装路径，需要安装哪些组件；配置完成，会生成makefile文件供第二步make使用；
+#. 编译是对源文件进行编译链接生成可执行程序；
+#. 安装做的工作就简单多了，就是将生成的可执行文件拷贝到配置时设置的初始路径下；
 
 配置
-./configure --help 查看可用的配置选项
-CPPFLAGS -I标记 非标准头文件存放路径
-LDFLAGS  -L标记 非标准库存放路径
-链接多库，右边是左边的前提
+--------------------
+查询可用的配置选项::
+
+    ./configure --help
+
+配置路径::
+    
+    ./configure --prefix=/usr/local/snmp
+--prefix是配置使用的最常用选项，设置程序安装的路径；
+
+编译
+---------------------
+编译使用make编译::
+
+    make -f myMakefile
+通过-f选项显示指定需要编译的makefile；如果待使用makefile文件在当前路径，且文件名为以下几个，则不用显示指定：
+
+makefile Makefile
 
 
-g++ 使用
-CC=gcc ./configure --prefix=/userhome/jhuang/openav
-g++ 编译：选项说明 ：-o:指明生成的目标文件
-g++ -o unixApp unixApp.o a.o b.o
-生成中间文件（不直接生产目标文件）:.o
-g++ -c a.o
--g：添加调试信息
+makefile编写的要点
+^^^^^^^^^^^^^^^^^^^^
+- 必须满足第一条规则，满足后停止
+- 除第一条规则，其他无顺序
 
-查看软件安装路径： which gcc
-查看gcc的动态连接库： ldd gcc
-ldd，查询应用程序需要链接的库： ldd avetes
+makefile中的全局自变量
+^^^^^^^^^^^^^^^^^^^^^^
+- $@目标文件名
+- @^所有前提名，除副本
+- @＋所有前提名，含副本
+- @＜一个前提名
+- @？所有新于目标文件的前提名
+- @*目标文件的基名称
+   
 
-程序构建工具/ （源代码软件安装）
+.. note::
+
+    系统学习makefile的书写规则，请参考 跟我一起学makefile [#]_
+
+编译依赖的库
+^^^^^^^^^^^^^^^^^^^^
+makefile编译过程中所依赖的非标准库和头文件路径需要显示指明::
+
+    CPPFLAGS -I标记非标准头文件存放路径
+    LDFLAGS  -L标记非标准库存放路径
+
+如果CPPFLAGS和LDFLAGS已在用户环境变量中设置并且导出（使用export关键字），就不用再显示指定；
+
+::
+
+    make -f myMakefile LDFLAGS='-L/var/xxx/lib -L/opt/mysql/lib' 
+        CPPFLAGS='-I/usr/local/libcom/include -I/usr/local/libpng/include'
+
+.. caution::
+
+    链接多库时，多个库之间如果有依赖，需要注意书写的顺序，右边是左边的前提；
+
+g++编译
+^^^^^^^^^^^^^^^^^^^^
+::
+
+    g++ -o unixApp unixApp.o a.o b.o
+选项说明：
+
+- -o:指明生成的目标文件
+- -g：添加调试信息
+- -E: 查看中间文件
+
+应用：查询宏展开的中间文件：
+
+在g++的编译选项中，添加 -E选项，然后去掉-o选项 ，重定向到一个文件中即可::
+
+    g++ -g -E unixApp.cpp  -I/opt/app/source > midfile
+
+
+查询应用程序需要链接的库::
+
+    $ldd myprogrammer
+	libstdc++.so.6 => /usr/lib64/libstdc++.so.6 (0x00000039a7e00000)
+	libm.so.6 => /lib64/libm.so.6 (0x0000003996400000)
+	libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x00000039a5600000)
+	libc.so.6 => /lib64/libc.so.6 (0x0000003995800000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000003995400000)
+
+.. note::
+    
+    关于ldd的使用细节，参见 :ref:`ldd` 
+
+安装
+--------------------
+安装做的工作就简单多了，就是将生成的可执行文件拷贝到配置时设置的初始路径下::
+
+    $make install
+其实 **install** 就是makefile中的一个规则，打开makefile文件后可以查看程序安装的所做的工作；
+
+总结
 ----------------------------------------------------
-apt-get make configure make install
+configure make install g++
 
-makefile
-关于makefile的详细资料：参考：百度：【跟我学makefile】
-附录：
-跟我学makefile
+
+.. [#]  陈皓 跟我一起写Makefile http://scc.qibebt.cas.cn/docs/linux/base/%B8%FA%CE%D2%D2%BB%C6%F0%D0%B4Makefile-%B3%C2%F0%A9.pdf

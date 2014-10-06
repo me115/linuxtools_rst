@@ -176,9 +176,3 @@ top命令交互操作指令
 	PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
 	17265 tdv1      15   0 56504  828  632 S  0.0  0.0 195:53.25 redis-server
 
-
-
-Posted by: 大CC | 14JUL,2014
-博客：[blog.me115.com](http://blog.me115.com) [[订阅](http://feed.feedsky.com/me115)]
-微博：[新浪微博](http://weibo.com/bigcc115)
-

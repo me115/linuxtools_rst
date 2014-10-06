@@ -115,6 +115,7 @@ PermissionsMark取值：
 
     $chmod 740 main     将main的用户权限设置为rwxr-----
 
+
 更改文件或目录的拥有者
 ^^^^^^^^^^^^^^^^^^^^^^
 ::

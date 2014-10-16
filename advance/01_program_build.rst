@@ -51,6 +51,10 @@ makefile中的全局自变量
 
     系统学习makefile的书写规则，请参考 跟我一起学makefile [#]_
 
+更多选择 CMake
+^^^^^^^^^^^^
+CMake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装(编译过程)。他能够输出各种各样的makefile或者project文件。使用CMake，能够使程序员从复杂的编译连接过程中解脱出来。它使用一个名为 CMakeLists.txt 的文件来描述构建过程,可以生成标准的构建文件,如 Unix/Linux 的 Makefile 或Windows Visual C++ 的 projects/workspaces 。
+
 编译依赖的库
 ^^^^^^^^^^^^^^^^^^^^
 makefile编译过程中所依赖的非标准库和头文件路径需要显示指明::

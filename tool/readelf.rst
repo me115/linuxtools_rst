@@ -1,7 +1,6 @@
 .. _readelf:
 
-
-readelf 查看elf格式文件
+readelf elf文件格式分析
 =========================
 这个工具和objdump命令提供的功能类似，但是它显示的信息更为具体，并且它不依赖BFD库(BFD库是一个GNU项目，它的目标就是希望通过一种统一的接口来处理不同的目标文件）；
 
@@ -26,28 +25,26 @@ ELF文件有三种类型：
 
 参数说明
 --------------------
-- -a --all        全部       Equivalent to: -h -l -S -s -r -d -V -A -I
-- -h --file-header    文件头   Display the ELF file header
+- -a --all              全部       Equivalent to: -h -l -S -s -r -d -V -A -I
+- -h --file-header      文件头   Display the ELF file header
 - -l --program-headers  程序 Display the program headers
-- --segments          An alias for --program-headers
+- --segments An alias for --program-headers
 - -S --section-headers  段头 Display the sections' header
-- --sections          An alias for --section-headers
-- -e --headers     全部头      Equivalent to: -h -l -S
-- -s --syms        符号表      Display the symbol table
-- --symbols          An alias for --syms
-- -n --notes        内核注释     Display the core notes (if present)
-- -r --relocs       重定位     Display the relocations (if present)
+- --sections            An alias for --section-headers
+- -e --headers          全部头      Equivalent to: -h -l -S
+- -s --syms             符号表      Display the symbol table
+- --symbols             An alias for --syms
+- -n --notes            内核注释     Display the core notes (if present)
+- -r --relocs           重定位     Display the relocations (if present)
 - -u --unwind            Display the unwind info (if present)
-- -d --dynamic      动态段     Display the dynamic segment (if present)
-- -V --version-info  版本    Display the version sections (if present)
-- -A --arch-specific  CPU构架   Display architecture specific information (if any).
-- -D --use-dynamic   动态段    Use the dynamic section info when displaying symbols
+- -d --dynamic          动态段     Display the dynamic segment (if present)
+- -V --version-info     版本    Display the version sections (if present)
+- -A --arch-specific    CPU构架   Display architecture specific information (if any).
+- -D --use-dynamic      动态段    Use the dynamic section info when displaying symbols
 - -x --hex-dump=<number> 显示 段内内容Dump the contents of section <number>
 - -w[liaprmfFso] or
-- --debug-dump[=line,=info,=abbrev,=pubnames,=ranges,=macro,=frames,=str,=loc]
-    显示DWARF2调试段内容       Display the contents of DWARF2 debug sections
 - -I --histogram         Display histogram of bucket list lengths
-- -W --wide        宽行输出      Allow output width to exceed 80 characters
+- -W --wide              宽行输出      Allow output width to exceed 80 characters
 - -H --help              Display this information
 - -v --version           Display the version number of readelf 
 
@@ -57,6 +54,7 @@ ELF文件有三种类型：
 
     $readelf -h main| grep Machine
 -h选项将显示文件头的概要信息，从里面可以看到，有很多有用的信息：
+
 ::
 
 	$readelf -h main
@@ -85,7 +83,8 @@ ELF文件有三种类型：
 一个编译好的应用程序，想知道其编译时是否使用了-g选项（加入调试信息）::
 
     $readelf -S main| grep debug
-用-S选项是显示所有段信息；如果编译时使用了-g选项，则会有debug段；
+
+用-S选项是显示所有段信息；如果编译时使用了-g选项，则会有debug段;
 
 查看.o文件是否编入了调试信息（编译的时候是否加了-g)::
 

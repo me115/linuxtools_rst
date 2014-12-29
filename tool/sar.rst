@@ -16,7 +16,7 @@ sar是查看操作系统报告指标的各种工具中，最为普遍和方便�
 默认情况下，sar从最近的0点0分开始显示数据；如果想继续查看一天前的报告；可以查看保存在/var/log/sysstat/下的sa日志；
 使用sar工具查看::
 
-    sar -f /var/log/sysstat/sa28 \| head sar -r -f
+    $sar -f /var/log/sysstat/sa28 \| head sar -r -f
     /var/log/sysstat/sa28
 
 .. image:: /_static/sar1.png
@@ -24,10 +24,7 @@ sar是查看操作系统报告指标的各种工具中，最为普遍和方便�
 
 查看CPU使用率
 -------------
-
-::
-
-    sar -u 1 5 默认情况下显示的cpu使用率等信息就是sar -u；
+sar -u : 默认情况下显示的cpu使用率等信息就是sar -u；
 
 .. image:: /_static/sar2.png
     :width: 800
@@ -43,12 +40,7 @@ sar是查看操作系统报告指标的各种工具中，最为普遍和方便�
 
 查看平均负载
 ------------
-
-::
-
-    sar -q
-.. image:: /_static/sar3.png
-    :width: 800
+sar -q: 查看平均负载
 
 指定-q后，就能查看运行队列中的进程数、系统上的进程大小、平均负载等；与其它命令相比，它能查看各项指标随时间变化的情况；
 
@@ -57,12 +49,14 @@ sar是查看操作系统报告指标的各种工具中，最为普遍和方便�
 - ldavg-1：最后1分钟的系统平均负载 ldavg-5：过去5分钟的系统平均负载
 - ldavg-15：过去15分钟的系统平均负载
 
+.. image:: /_static/sar3.png
+    :width: 800
+
+
 查看内存使用状况
 ----------------
+sar -r： 指定-r之后，可查看物理内存使用状况；
 
-::
-
-    sar -r 指定-r之后，可查看屋里内存使用状况；
 .. image:: /_static/sar4.png
     :width: 800
 
@@ -75,10 +69,8 @@ sar是查看操作系统报告指标的各种工具中，最为普遍和方便�
 
 查看页面交换发生状况
 --------------------
+sar -W：查看页面交换发生状况
 
-::
-
-    sar -W
 页面发生交换时，服务器的吞吐量会大幅下降；服务器状况不良时，如果怀疑因为内存不足而导致了页面交换的发生，可以使用这个命令来确认是否发生了大量的交换；
 
 .. image:: /_static/sar5.png
@@ -87,20 +79,19 @@ sar是查看操作系统报告指标的各种工具中，最为普遍和方便�
 - pswpin/s：每秒系统换入的交换页面（swap page）数量
 - pswpout/s：每秒系统换出的交换页面（swap page）数量
 
-要判断系统瓶颈问题，有时需几个 sar 命令选项结合起来
-怀疑CPU存在瓶颈，可用 sar -u 和 sar -q 等来查看 怀疑内存存在瓶颈，可用
-sar -B、sar -r 和 sar -W 等来查看 怀疑I/O存在瓶颈，可用 sar -b、sar -u
-和 sar -d 等来查看
+要判断系统瓶颈问题，有时需几个 sar 命令选项结合起来；
 
-sar 1 3
+- 怀疑CPU存在瓶颈，可用 sar -u 和 sar -q 等来查看 
+- 怀疑内存存在瓶颈，可用sar -B、sar -r 和 sar -W 等来查看 
+- 怀疑I/O存在瓶颈，可用 sar -b、sar -u 和 sar -d 等来查看
 
 安装
 ----
 
-有的linux系统下，默认可能没有安装这个包，使用apt-get install sysstat
-来安装； 安装完毕，将性能收集工具的开关打开： vi /etc/default/sysstat
-ENABLED="true" 启动这个工具来收集系统性能数据： /etc/init.d/sysstat
-start
+1. 有的linux系统下，默认可能没有安装这个包，使用apt-get install sysstat 来安装； 
+2. 安装完毕，将性能收集工具的开关打开： vi /etc/default/sysstat 
+  设置 ENABLED="true" 
+3. 启动这个工具来收集系统性能数据： /etc/init.d/sysstat start
 
 sar参数说明
 -----------
@@ -121,5 +112,5 @@ sar参数说明
 - -r 报告没有使用的内存页面和硬盘块
 - -u 报告CPU的利用率 
 - -v 报告进程、i节点、文件和锁表状态
--w 报告系统交换活动状况
--y 报告TTY设备活动状况
+- -w 报告系统交换活动状况
+- -y 报告TTY设备活动状况

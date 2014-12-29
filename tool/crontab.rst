@@ -1,3 +1,8 @@
+.. _crontab:
+
+crontab 定时任务
+======================
+
 命令格式
 -----------------
 crontab [-u user] file
@@ -208,3 +213,13 @@ export RUN_CONF=/home/d139/conf/platform/cbp/cbp_jboss.conf
 当crontab突然失效时，可以尝试/etc/init.d/crond restart解决问题。或者查看日志看某个job有没有执行/报错tail -f /var/log/cron。
 千万别乱运行crontab -r。它从Crontab目录（/var/spool/cron）中删除用户的Crontab文件。删除了该用户的所有crontab都没了。
 在crontab中%是有特殊含义的，表示换行的意思。如果要用的话必须进行转义\%，如经常用的date ‘+%Y%m%d’在crontab里是不会执行的，应该换成date ‘+\%Y\%m\%d’。
+
+更新系统时间时区后需要重启cron
+在ubuntu中服务名为cron：
+service cron restart
+
+or:ubuntu下启动、停止与重启cron
+sudo /etc/init.d/cron start
+sudo /etc/init.d/cron stop
+sudo /etc/init.d/cron restart
+

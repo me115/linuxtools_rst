@@ -10,17 +10,21 @@
     gdb
     ldd
     lsof
-    nm
     ps
-    readelf
-    scp
-    size
+    pstack
+    strace
+    ipcs
     top
     vmstat
-    wget
-    sar
-    crontab
     iostat
+    sar
+    readelf
+    objdump
+    nm
+    size
+    wget
+    scp
+    crontab
 
 
 这里是工具详情及工具参考；

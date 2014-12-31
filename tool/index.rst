@@ -15,6 +15,7 @@
     strace
     ipcs
     top
+    free
     vmstat
     iostat
     sar

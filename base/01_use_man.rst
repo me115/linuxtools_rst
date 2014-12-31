@@ -5,40 +5,42 @@
 
 概述  
 --------------------
-    在linux终端，面对命令不知道怎么用，或不记得命令的拼写及参数时，我们需要求助于系统的帮助文档；
+在linux终端，面对命令不知道怎么用，或不记得命令的拼写及参数时，我们需要求助于系统的帮助文档；
 linux系统内置的帮助文档很详细，通常能解决我们的问题，我们需要掌握如何正确的去使用它们；
 
-在只记得部分命令关键字的场合，我们可通过man -k来搜索；
+- 在只记得部分命令关键字的场合，我们可通过man -k来搜索；
+- 需要知道某个命令的简要说明，可以使用whatis；而更详细的介绍，则可用info命令；
+- 查看命令在哪个位置，我们需要使用which；
+- 而对于命令的具体参数及使用方法，我们需要用到强大的man；
 
-需要知道某个命令的简要说明，可以使用whatis；而更详细的介绍，则可用info命令；
-
-查看命令在哪个位置，我们需要使用which；
-
-而对于命令的具体参数及使用方法，我们需要用到强大的man；
-下面分别介绍；
+下面介绍这些命令；
 
 
 命令使用
 --------------------
 
 查看命令的简要说明
-^^^^^^^^^^^^^^^^^^^^
-    $whatis command  
-简要说明命令的作用；（显示命令所处的man分类页面）
+^^^^^^^^^^^^^^^^^^^^  
+简要说明命令的作用（显示命令所处的man分类页面）::
 
-正则匹配 
-    whatis -w "loca*"
+    $whatis command
 
-更加详细的说明文档  
+正则匹配::
+
+    4whatis -w "loca*"
+
+更加详细的说明文档::
+
     $info command  
 
 使用man
 ^^^^^^^^^^^^^^^^^^^^
 
-查询命令command的说明文档  
-    $man command
+查询命令command的说明文档::
 
-eg：man date 
+    $man command
+    eg：man date
+
 使用page up和page down来上下翻页
 
 在man的帮助手册中，将帮助文档分为了9个类别，对于有的关键字可能存在多个类别中，
@@ -71,35 +73,37 @@ man页面所属的分类标识(常用的是分类1和分类3) ::
 
     $man 3 printf
 
-
     $man -k keyword
 
 查询关键字
 根据命令中部分关键字来查询命令，适用于只记住部分命令的场合；  
-eg：
-查找GNOME的config配置工具命令：  
-$man -k GNOME config| grep 1  
 
-对于某个单词搜索，可直接使用/word来使用 :   /-a;   
+eg：查找GNOME的config配置工具命令::
+
+    $man -k GNOME config| grep 1  
+
+对于某个单词搜索，可直接使用/word来使用:   /-a;
 多关注下SEE ALSO 可看到更多精彩内容  
 
 
 查看路径
 ^^^^^^^^
-$which command  
-查看程序的binary文件所在路径  
+查看程序的binary文件所在路径::
+    
+    $which command  
+    
+eg:查找make程序安装路径::
 
-eg:
-$which make：查找make程序安装路径；
-/opt/app/openav/soft/bin/make install
+    $which make
+    /opt/app/openav/soft/bin/make install
 
-$whereis command
-查看程序的搜索路径
+查看程序的搜索路径::
+
+    $whereis command
 当系统中安装了同一软件的多个版本时，不确定使用的是哪个版本时，这个命令就能派上用场；
 
 
 总结  
 ^^^^
-
 whatis info man which whereis
 

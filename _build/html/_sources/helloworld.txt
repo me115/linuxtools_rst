@@ -1,7 +1,7 @@
 .. _helloworld:
 
 
-reStructuredText简明教程 
+附录：reStructuredText简明教程 
 =========================
 
 .. contents:: 目录

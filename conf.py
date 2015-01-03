@@ -48,8 +48,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'linuxtools'
-copyright = u'2014, colin'
+project = u'Linux Tools'
+copyright = u'2014, Colin'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -118,7 +118,7 @@ html_theme_path = ['.']
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = u"Linux工具快速教程"
+html_title = u"Linux Tools Quick Tutorial"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -184,7 +184,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'linuxtoolsdoc'
+htmlhelp_basename = 'Linux Tools Quick Tutorial'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -234,7 +234,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'linuxtools', u'linuxtools Documentation',
+    ('index', 'Linux Tools', u'linuxtools Documentation',
      [u'colin'], 1)
 ]
 
@@ -248,8 +248,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'linuxtools', u'linuxtools Documentation',
-   u'colin', 'linuxtools', 'One line description of project.',
+  ('index', 'Linux Tools', u'linuxtools Documentation',
+   u'colin', 'Linux Tools', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -269,10 +269,10 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'linuxtools'
-epub_author = u'colin'
-epub_publisher = u'colin'
-epub_copyright = u'2014, colin'
+epub_title = u'Linux Tools'
+epub_author = u'Colin'
+epub_publisher = u'Colin'
+epub_copyright = u'2014, Colin'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'linuxtools'

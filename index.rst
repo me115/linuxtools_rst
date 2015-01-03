@@ -36,7 +36,6 @@ Linux工具快速教程
     base/index
     advance/index
     tool/index
-    helloworld
 
 
 Indices and tables

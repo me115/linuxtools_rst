@@ -127,6 +127,10 @@ grep输出以\0作为结尾符的文件名（-z）::
 
     grep "test" file* -lZ| xargs -0 rm
 
+综合应用：将日志中的所有带where条件的sql查找查找出来::
+    
+    cat LOG.* | tr a-z A-Z | grep "FROM " | grep "WHERE" > b
+
 xargs 命令行参数转换
 ---------------------
 xargs 能够将输入数据转化为特定命令的命令行参数；这样，可以配合很多命令来组合使用。比如grep，比如find；

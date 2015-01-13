@@ -36,3 +36,5 @@ Linux下有很多命令行工具供我们使用，每个工具总是提供了大
 2. 有大量漂亮的HTML书籍主题模版，可为书籍轻松换肤（类似Wordpress的网站模版）；
 3. 对于参考手册类书籍的编写在语法上更为便利（python官方帮助文档的使用者）；
 
+## 在线阅读
+在线阅读地址：[http://linuxtools-rst.readthedocs.org/zh_CN/latest/](http://linuxtools-rst.readthedocs.org/zh_CN/latest/)

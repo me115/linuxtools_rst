@@ -303,15 +303,15 @@ sed 文本替换利器
 - 首处替换
 ::
 
-    seg 's/text/replace_text/' file   //替换每一行的第一处匹配的text
+    sed 's/text/replace_text/' file   //替换每一行的第一处匹配的text
 - 全局替换
 ::
 
-    seg 's/text/replace_text/g' file
+    sed 's/text/replace_text/g' file
 
 默认替换后，输出替换后的内容，如果需要直接替换原文件,使用-i::
 
-    seg -i 's/text/repalce_text/g' file
+    sed -i 's/text/repalce_text/g' file
 
 - 移除空白行
 ::
@@ -322,7 +322,7 @@ sed 文本替换利器
 已匹配的字符串通过标记&来引用.
 ::
 
-	echo this is en example | seg 's/\w+/[&]/g'
+	echo this is en example | sed 's/\w+/[&]/g'
 	$>[this]  [is] [en] [example]
 
 

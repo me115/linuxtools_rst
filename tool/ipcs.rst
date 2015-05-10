@@ -143,3 +143,25 @@ ipcrm用法::
     ipcs -m | awk '{ print "ipcrm -m "$2}' | sh > /dev/null 2>&1;
     ipcs -s | awk '{ print "ipcrm -s "$2}' | sh > /dev/null 2>&1;
 
+综合应用
+--------------------
+查询user1用户环境上是否存在积Queue现象
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1. 查询队列Queue::
+
+    $ipcs -q
+
+    ------ Message Queues --------
+    key        msqid      owner      perms      used-bytes   messages    
+    0x49060005 58261504   user1    660        0            0           
+    0x4f060005 58294273   user1    660        0            0          
+    ...
+
+2. 找出第6列大于0的服务::
+
+    $ ipcs -q |grep user1 |awk '{if($5>0) print $0}'
+    0x00000000 1071579324 user1       644        1954530      4826        
+    0x00000000 1071644862 user1       644        1961820      4844        
+    0x00000000 1071677631 user1       644        1944810      4802        
+    0x00000000 1071710400 user1       644        1961820      4844   
+

@@ -48,8 +48,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Linux Tools'
-copyright = u'2014, Colin'
+project = u'Linux Tools Quick Tutorial'
+copyright = u'2014, Colin http://blog.me115.com'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -273,6 +273,11 @@ epub_title = u'Linux Tools'
 epub_author = u'Colin'
 epub_publisher = u'Colin'
 epub_copyright = u'2014, Colin'
+#epub_title = u'Linux工具快速教程'
+#epub_author = u'大CC'
+#epub_publisher = u'木书架'
+#epub_copyright = u'2015, 木书架出品'
+
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'linuxtools'
@@ -299,6 +304,7 @@ epub_copyright = u'2014, Colin'
 
 # A tuple containing the cover image and cover page html template filenames.
 #epub_cover = ()
+epub_cover = ('_static/cover_linuxtools.jpg', '')
 
 # A sequence of (type, uri, title) tuples for the guide element of content.opf.
 #epub_guide = ()

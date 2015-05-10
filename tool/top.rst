@@ -102,6 +102,7 @@ top命令交互操作指令
 注：通过”shift + >”或”shift + <”可以向右或左改变排序列
 如果只需要查看内存：可用free命令。只查看uptime信息（第一行），可用uptime命令；
 
+
 实例
 ----------
 实例1：多核CPU监控
@@ -163,6 +164,23 @@ top命令交互操作指令
 	Swap:  6881272k total,  4275424k used,  2605848k free,  6338184k cached
 	PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
 	17265 tdv1      15   0 56504  828  632 S  0.0  0.0 195:53.25 redis-server
+
+
+指定进程信息有多个时，需要结合其它工具将回车替换为,（-p 支持pid,pid,pid语法）
+
+命令：top -p `pgrep MULTI_PROCESS | tr "\\n" "," | sed 's/,$//'`
+
+::
+
+    /opt/app/tdv1$top -p `pgrep java | tr "\\n" "," | sed 's/,$//'`
+    top - 14:05:31 up 53 days,  2:43,  9 users,  load average: 0.29, 0.34, 0.22
+    Tasks:   3 total,   0 running,   3 sleeping,   0 stopped,   0 zombie
+    Cpu(s):  5.9%us,  8.2%sy,  0.0%ni, 86.0%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+    Mem:  66082088k total, 29512860k used, 36569228k free,   756352k buffers
+    Swap: 32767992k total,  1019900k used, 31748092k free, 15710284k cached
+
+      PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                                          27855 rdtfare   20   0 4454m 1.3g 5300 S  0.7  2.0 338:31.37 java                         
+     2034 jenkins   20   0 18.3g 5.2g 5284 S  0.3  8.2  56:02.38 java                                             12156 rdtfare   20   0 4196m 1.2g  12m S  0.3  2.0  86:34.62 java  
 
 更强大的工具
 ---------------

@@ -88,7 +88,7 @@ DNS查询，寻找域名domain对应的IP::
 - -c：断点续传
 
 
-ftp sftp ssh
+ftp sftp lftp ssh
 --------------------
 
 SSH登陆::
@@ -110,6 +110,11 @@ ftp/sftp文件传输::
 - lls             # 列出本地主机上当前路径的所有文件
 - lcd             # 在本地主机更改当前路径
 
+lftp同步文件夹(类似rsync工具)::
+
+    lftp -u user:pass host
+    lftp user@host:~> mirror -n
+    
 
 网络复制
 --------------------

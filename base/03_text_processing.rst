@@ -131,6 +131,15 @@ grep输出以\0作为结尾符的文件名（-z）::
     
     cat LOG.* | tr a-z A-Z | grep "FROM " | grep "WHERE" > b
 
+查找中文示例：工程目录中utf-8格式和gb2312格式两种文件，要查找字的是中文；
+    
+1.  查找到它的utf-8编码和gb2312编码分别是E4B8ADE69687和D6D0CEC4
+2. 查询::
+
+        grep：grep -rnP "\xE4\xB8\xAD\xE6\x96\x87|\xD6\xD0\xCE\xC4" *即可
+
+汉字编码查询：http://bm.kdd.cc/
+
 xargs 命令行参数转换
 ---------------------
 xargs 能够将输入数据转化为特定命令的命令行参数；这样，可以配合很多命令来组合使用。比如grep，比如find；
@@ -159,6 +168,9 @@ xargs参数说明
 
     #统计程序行数
     find source_dir/ -type f -name "*.cpp" -print0 |xargs -0 wc -l
+
+    #redis通过string存储数据，通过set存储索引，需要通过索引来查询出所有的值：
+    ./redis-cli smembers $1  | awk '{print $1}'|xargs -I {} ./redis-cli get {}
 
 sort 排序
 --------------------
@@ -461,6 +473,12 @@ $2:第二个字段的文本内容；
 	END{ for(;lno>-1;lno--){print lifo[lno];}
 	} '
 
+
+awk结合grep找到指定的服务，然后将其kill掉
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+    ps -fe| grep msv8 | grep -v MFORWARD | awk '{print $2}' | xargs kill -9;
 
 awk实现head、tail命令
 ^^^^^^^^^^^^^^^^^^^^^^

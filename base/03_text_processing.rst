@@ -95,9 +95,9 @@ w字 k M G
 
 -print的定界符
 ^^^^^^^^^^^^^^^^^^^^
-默认使用'\n'作为文件的定界符；
+默认使用'\\\n'作为文件的定界符；
 
--print0 使用'\0'作为文件的定界符，这样就可以搜索包含空格的文件；
+-print0 使用'\\\0'作为文件的定界符，这样就可以搜索包含空格的文件；
 
 grep 文本搜索
 -------------------------
@@ -107,7 +107,7 @@ grep 文本搜索
 
 常用参数
 
-- -o 只输出匹配的文本行 **VS ** -v 只输出没有匹配的文本行
+- -o 只输出匹配的文本行 **VS** -v 只输出没有匹配的文本行
 - -c 统计文件中包含文本的次数
     grep -c "text" filename
 - -n 打印匹配的行号
@@ -315,15 +315,15 @@ sed 文本替换利器
 - 首处替换
 ::
 
-    seg 's/text/replace_text/' file   //替换每一行的第一处匹配的text
+    sed 's/text/replace_text/' file   //替换每一行的第一处匹配的text
 - 全局替换
 ::
 
-    seg 's/text/replace_text/g' file
+    sed 's/text/replace_text/g' file
 
 默认替换后，输出替换后的内容，如果需要直接替换原文件,使用-i::
 
-    seg -i 's/text/repalce_text/g' file
+    sed -i 's/text/repalce_text/g' file
 
 - 移除空白行
 ::
@@ -334,7 +334,7 @@ sed 文本替换利器
 已匹配的字符串通过标记&来引用.
 ::
 
-	echo this is en example | seg 's/\w+/[&]/g'
+	echo this is en example | sed 's/\w+/[&]/g'
 	$>[this]  [is] [en] [example]
 
 

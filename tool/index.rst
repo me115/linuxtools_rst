@@ -27,13 +27,3 @@
     scp
     crontab
 
-
-这里是工具详情及工具参考；
-top
-sar
-make
-gcc
-objdump
-readlf
-ulimit
-ulimit内置在bash shell中，用来提供对shell和进程可用资源的控制

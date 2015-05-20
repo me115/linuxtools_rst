@@ -1,0 +1,32 @@
+/*
+ * pylons.css_t
+ * ~~~~~~~~~~~~
+ *
+ * Sphinx stylesheet -- pylons theme.
+ *
+ * :copyright: Copyright 2007-2010 by the Sphinx team, see AUTHORS.
+ * :license: BSD, see LICENSE for details.
+body a:hover, body a:hover .pre, a .pre:hover{
+    color:white;
+    background-color: {{ theme_color }};
+}
+ *
+ */
+#ad {
+    float: right;
+    width: 39%;
+}
+
+#discuss {
+    float: left;
+    width: 60%;
+}
+
+em {
+    font-style: normal;
+}
+
+a, a .pre {
+    color: {{ theme_color }};
+}
+

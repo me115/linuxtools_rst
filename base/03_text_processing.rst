@@ -11,7 +11,7 @@ find、grep、xargs、sort、uniq、tr、cut、paste、wc、sed、awk；
 我对shell脚本使用的原则是命令单行书写，尽量不要超过2行；
 如果有更为复杂的任务需求，还是考虑python吧；
 
-文件查找
+find 文件查找
 --------------------
 
 查找txt和pdf文件::
@@ -37,7 +37,21 @@ find、grep、xargs、sort、uniq、tr、cut、paste、wc、sed、awk；
 ::
 
     find . -type d -print  //只列出所有目录
--type f 文件 / l 符号链接
+-type f 文件 / l 符号链接 / d  目录 
+
+find支持的文件检索类型可以区分普通文件和符号链接、目录等，但是二进制文件和文本文件无法直接通过find的类型区分出来；
+
+file命令可以检查文件具体类型（二进制或文本）::
+
+    $file redis-cli  # 二进制文件
+    redis-cli: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.9, not stripped
+    $file redis.pid  # 文本文件
+    redis.pid: ASCII text
+
+所以,可以用以下命令组合来实现查找本地目录下的所有二进制文件::
+
+    ls -lrt | awk '{print $9}'|xargs file|grep  ELF| awk '{print $1}'|tr -d ':'
+
 
 - 按时间搜索
     * -atime 访问时间 (单位是天，分钟单位则是-amin，以下类似）
@@ -465,6 +479,20 @@ $2:第二个字段的文本内容；
 
     for(i=0;i<10;i++){print $i;}
     for(i in array){print array[i];}
+
+eg:以下字符串，打印出其中的时间串::
+
+    2015_04_02 20:20:08: mysqli connect failed, please check connect info
+    $echo '2015_04_02 20:20:08: mysqli connect failed, please check connect info'|awk -F ":" '{ for(i=1;i<=;i++) printf("%s:",$i)}'
+    >2015_04_02 20:20:08:  # 这种方式会将最后一个冒号打印出来
+    $echo '2015_04_02 20:20:08: mysqli connect failed, please check connect info'|awk -F':' '{print $1 ":" $2 ":" $3; }'
+    >2015_04_02 20:20:08   # 这种方式满足需求
+
+而如果需要将后面的部分也打印出来(时间部分和后文分开打印)::
+
+    $echo '2015_04_02 20:20:08: mysqli connect failed, please check connect info'|awk -F':' '{print $1 ":" $2 ":" $3; print $4;}'
+    >2015_04_02 20:20:08
+    >mysqli connect failed, please check connect info
 
 以逆序的形式打印行：(tac命令的实现）::
 

@@ -63,6 +63,10 @@
 - -f :使用档案文件
 注：有的系统中指定参数时不需要在前面加上-，直接使用tar xvf
 
+示例：用tar实现文件夹同步，排除部分文件不同步::
+
+    tar --exclude '*.svn' -cvf - /path/to/source | ( cd /path/to/target; tar -xf -)
+
 **压缩**
 ::
 

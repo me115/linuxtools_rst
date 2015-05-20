@@ -1,3 +1,23 @@
+<style>
+#ad {
+    float: right;
+    width: 29%;
+}
+
+#discuss {
+    float: left;
+    width: 70%;
+}
+
+em {
+    font-style: normal;
+}
+
+a, a .pre {
+    color: {{ theme_color }};
+}
+</style>
+
 <footer>
   {% if next or prev %}
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
@@ -12,10 +32,11 @@
 
   <!--when online,open this -->
   <!-- <hr/>
-  
-     {% include "disqus.html" %} -->
+  -->
+  <hr/>  
+     {% include "disqus.html" %} 
   <hr/>
-
+  
   <div role="contentinfo">
     <p>
     {%- if show_copyright %}

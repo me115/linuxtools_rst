@@ -7,7 +7,8 @@ crontab 定时任务
 
 命令格式
 --------------
-crontab [-u user] [ -e | -l | -r ]
+    crontab [-u user] file
+    crontab [-u user] [ -e | -l | -r ]
 
 命令参数
 -----------
@@ -26,7 +27,7 @@ crontab的文件格式
 - 第2列小时1～23（0表示子夜）
 - 第3列日1～31
 - 第4列月1～12
-- 第5列星期0～6（0表示星期天）
+- 第5列星期0～7（0和7表示星期天）
 - 第6列要运行的命令
 
 
@@ -181,7 +182,7 @@ crontab的文件格式
     source /etc/profile
     export RUN_CONF=/home/d139/conf/platform/cbp/cbp_jboss.conf
     /usr/local/jboss-4.0.5/bin/run.sh -c mev &
-3）当手动执行脚本OK，但是crontab死活不执行时,很可能是环境变量惹的祸，可尝试在crontab中直接引入环境变量解决问题。如::
+3. 当手动执行脚本OK，但是crontab死活不执行时,很可能是环境变量惹的祸，可尝试在crontab中直接引入环境变量解决问题。如::
 
     0 * * * * . /etc/profile;/bin/sh /var/www/java/audit_no_count/bin/restart_audit.sh
 

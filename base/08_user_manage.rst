@@ -87,7 +87,7 @@
 
 字母方式::
 
-    $chown userMark(+|-)PermissionsMark
+    $chmod userMark(+|-)PermissionsMark
 userMark取值：
 
 - u：用户  

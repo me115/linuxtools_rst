@@ -59,7 +59,7 @@ crontab的文件格式
 使用-l参数列出crontab文件::
 
     $ crontab -l
-    0,15,30,45,18-06 * * * /bin/echo `date` > dev/tty1
+    0,15,30,45 18-06 * * * /bin/echo `date` > dev/tty1
 
 可以使用这种方法在$HOME目录中对crontab文件做一备份::
 

@@ -24,7 +24,7 @@ Swap:   397308k total,    67192k used,   330116k free,    71900k cached
 264 days, 20:56 ：   系统开机到现在经过了多少时间
 1 users  ：            当前2用户在线
 load average: 0.02, 0.04, 0.00：        系统1分钟、5分钟、15分钟的CPU负载信息
- 
+
 ## 第二行
 Tasks：任务;
 87 total：很好理解，就是当前有87个任务，也就是87个进程。
@@ -32,7 +32,7 @@ Tasks：任务;
 86 sleeping：86个进程睡眠
 0 stopped：停止的进程数
 0 zombie：僵死的进程数
- 
+
 ## 第三行
 Cpu(s)：表示这一行显示CPU总体信息
 0.0%us：用户态进程占用CPU时间百分比，不包含renice值为负的任务占用的CPU的时间。
@@ -50,7 +50,7 @@ Men：内存的意思
 8058868k used：使用的物理内存量
 116452k free：空闲的物理内存量
 283084k buffers：用作内核缓存的物理内存量
- 
+
 ## 第五行
 Swap：交换空间
 6881272k total：交换区总量
@@ -72,7 +72,7 @@ S：进程的状态。S表示休眠，R表示正在运行，Z表示僵死状态�
 %MEM：进程使用的物理内存和总内存的百分比
 TIME+：该进程启动后占用的总的CPU时间，即占用CPU使用时间的累加值。
 COMMAND：进程启动命令名称
- 
+
 ## top命令交互操作指令
 下面列出一些常用的 top命令操作指令
 ```
@@ -82,6 +82,7 @@ s：设置刷新时间间隔
 c：显示命令完全模式
 t:：显示或隐藏进程和CPU状态信息
 m：显示或隐藏内存状态信息
+n：显示指定行数
 l：显示或隐藏uptime信息
 f：增加或减少进程显示标志
 S：累计模式，会把已完成或退出的子进程占用的CPU时间累计到父进程的MITE+
@@ -139,7 +140,7 @@ Swap: 35651576k total,  5761808k used, 29889768k free, 16918824k cached
 18335 pubtest   22   0 65576  996  728 R  7.8  0.0   0:00.24 netstat -naltp                            
 16499 rdtfare   15   0 13672 2080  824 R  2.6  0.0   0:00.38 top -c                                         
 29684 rdtfare   15   0 1164m 837m  14m S  2.3  2.6 148:47.54 ./autodata data1.txt                     
-12976 pubtest   18   0  238m 9000 1932 S  1.6  0.0 439:28.44 tscagent -s TOEV_P 
+12976 pubtest   18   0  238m 9000 1932 S  1.6  0.0 439:28.44 tscagent -s TOEV_P
 ```
 
 ### 实例4：显示指定的进程信息
@@ -159,4 +160,3 @@ Swap:  6881272k total,  4275424k used,  2605848k free,  6338184k cached
 Posted by: 大CC | 14JUL,2014
 博客：[blog.me115.com](http://blog.me115.com) [[订阅](http://feed.feedsky.com/me115)]
 微博：[新浪微博](http://weibo.com/bigcc115)
-

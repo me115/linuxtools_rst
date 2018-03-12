@@ -84,11 +84,11 @@
 
 find是实时查找，如果需要更快的查询，可试试locate；locate会为文件系统建立索引数据库，如果有文件更新，需要定期执行更新命令来更新索引库::
 
-    $locate string
+    $updatedb
 
 寻找包含有string的路径::
 
-    $updatedb
+    $locate string
 
 与find不同，locate并不是实时查找。你需要更新数据库，以获得最新的文件索引信息。
 

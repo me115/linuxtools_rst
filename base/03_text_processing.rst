@@ -268,7 +268,7 @@ cut 按列切分文本
 - -d 指定定界符
 ::
 
-    cat -f2 -d";" filename
+    cut -f2 -d";" filename
 - cut 取的范围
     * N- 第N个字段到结尾
     * -M 第1个字段为M

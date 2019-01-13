@@ -38,7 +38,7 @@ pstack是一个脚本工具，可显示每个进程的栈跟踪。pstack 命令�
 
 语法::
 
-    $pstrack <program-pid>
+    $pstack <program-pid>
 
 示例::
 

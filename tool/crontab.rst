@@ -19,7 +19,7 @@ crontab 定时任务
 - -r：从/var/spool/cron目录中删除某个用户的crontab文件，如果不指定用户，则默认删除当前用户的crontab文件。
 - -i：在删除用户的crontab文件时给确认提示。
 
-crontab的文件格式
+crontab 的文件格式
 -------------------
 分 时 日 月 星期 要运行的命令
 
@@ -30,10 +30,14 @@ crontab的文件格式
 - 第5列星期0～7（0和7表示星期天）
 - 第6列要运行的命令
 
+为了便于大家记忆，可以看下面这张图：
+
+.. image:: ../_static/crontab_format.png
+   :alt: crontab 文件格式
 
 常用方法
 -----------------
-创建一个新的crontab文件
+创建一个新的 crontab 文件
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 向cron进程提交一个crontab文件之前，首先要设置环境变量EDITOR。cron进程根据它来确定使用哪个编辑器编辑crontab文件。9 9 %的UNIX和LINUX用户都使用vi，如果你也是这样，那么你就编辑$HOME目录下的. profile文件，在其中加入这样一行::
 

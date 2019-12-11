@@ -91,17 +91,17 @@ DNS查询，寻找域名domain对应的IP::
 ftp sftp lftp ssh
 --------------------
 
-SSH登陆::
+SSH登录::
 
     $ssh ID@host
-ssh登陆远程服务器host，ID为用户名。
+ssh登录远程服务器host，ID为用户名。
 
 
 ftp/sftp文件传输::
 
     $sftp ID@host
 
-登陆服务器host，ID为用户名。sftp登陆后，可以使用下面的命令进一步操作：
+登录服务器host，ID为用户名。sftp登录后，可以使用下面的命令进一步操作：
 
 - get filename    # 下载文件
 - put filename    # 上传文件

@@ -19,7 +19,7 @@ lsof打开的文件可以是：
 
 命令参数
 -----------------
-- -a 列出打开文件存在的进程
+- -a causes list selection options to be ANDed,
 - -c<进程名> 列出指定进程所打开的文件
 - -g 列出GID号进程详情
 - -d<文件号> 列出占用该文件号的进程

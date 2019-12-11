@@ -8,7 +8,8 @@ crontab 定时任务
 命令格式
 --------------
     crontab [-u user] file
-    crontab [-u user] [ -e | -l | -r ]
+    
+    crontab [-u user] { -e | -l | -r }
 
 命令参数
 -----------

@@ -20,7 +20,7 @@ find 文件查找
 
 正则方式查找.txt和pdf::
 
-    find . -regex  ".*\(\.txt|\.pdf\)$"
+    find . -regex  ".*\(\.txt\|\.pdf\)$"
 -iregex： 忽略大小写的正则
 
 否定参数 ,查找所有非txt文本::

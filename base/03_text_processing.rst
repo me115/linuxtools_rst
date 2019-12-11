@@ -348,7 +348,7 @@ sed 文本替换利器
 已匹配的字符串通过标记&来引用.
 ::
 
-	echo this is en example | sed 's/\w+/[&]/g'
+	echo this is en example | sed 's/\w\+/[&]/g'
 	$>[this]  [is] [en] [example]
 
 

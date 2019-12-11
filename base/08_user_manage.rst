@@ -164,6 +164,7 @@ bashrc与profile都用于保存用户的环境信息，bashrc用于交互式non-
 	. /opt/app/tuxapp/openav/config/setenv.prod.sh.linux
 	export PS1='$PWD#'
 
+执行 source ~/.bashrc 使.bashrc中的修改生效
 通过上述设置，我们进入log目录就只需要输入cd $log即可；
 
 总结

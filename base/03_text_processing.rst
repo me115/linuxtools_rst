@@ -66,7 +66,7 @@ file命令可以检查文件具体类型（二进制或文本）::
     find . -atime -7 -type f -print
 查询7天前被访问过的所有文件::
 
-    find . -atime +7 type f -print
+    find . -atime +7 -type f -print
 
 - 按大小搜索：
 w字 k M G

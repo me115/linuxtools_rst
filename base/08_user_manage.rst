@@ -76,7 +76,7 @@
 例如:
 ::
 
-	[/home/weber#]ls -l /etc/group
+	[/home/weber#]ls -l /home/colin/a
 	-rwxrw-r-- colin king 725 2013-11-12 15:37 /home/colin/a
 
 表示这个文件对文件拥有者colin这个用户可读写、可执行；对colin所在的组（king）可读可写；对其它用户只可读；

@@ -57,7 +57,7 @@ strace 显示这些调用的参数并返回符号形式的值。strace 从内核
     只跟踪有关进程控制的系统调用. 
     -e trace=network 
     跟踪与网络有关的所有系统调用. 
-    -e strace=signal 
+    -e trace=signal 
     跟踪所有与系统信号有关的 系统调用 
     -e trace=ipc 
     跟踪所有与进程通讯有关的系统调用 

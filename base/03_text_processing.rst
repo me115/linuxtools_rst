@@ -89,7 +89,7 @@ w字 k M G
     find . -type f -name "*.swp" -delete
 另一种语法::
 
-    find . type f -name "*.swp" | xargs rm
+    find . -type f -name "*.swp" | xargs rm
 
 - 执行动作（强大的exec）
 将当前目录下的所有权变更为weber::
